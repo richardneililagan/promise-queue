@@ -1,15 +1,19 @@
 {
   "name": "promise-queue",
-  "version": "0.0.1",
+  "author": "Richard Neil Ilagan <me@richardneililagan.com>",
   "description": "Throttle the execution of multiple concurrent Promises.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
   "keywords": [
     "promise",
     "queue"
   ],
-  "author": "Richard Neil Ilagan <me@richardneililagan.com>",
-  "license": "MIT"
+  "devDependencies": {
+    "babel-cli": "^6.4.0"
+  },
+  "scripts": {
+    "build" : "babel src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 }
