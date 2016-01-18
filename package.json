@@ -1,0 +1,15 @@
+{
+  "name": "promise-queue",
+  "version": "0.0.1",
+  "description": "Throttle the execution of multiple concurrent Promises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "promise",
+    "queue"
+  ],
+  "author": "Richard Neil Ilagan <me@richardneililagan.com>",
+  "license": "MIT"
+}
