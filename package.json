@@ -14,6 +14,8 @@
   },
   "scripts": {
     "build" : "babel src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "prepublish" : "npm run build",
+    "test" : "echo \"Error: no test specified\" && exit 1",
+    "watch" : "babel -w src --out-dir lib"
+  }
 }
