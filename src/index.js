@@ -19,31 +19,23 @@ function Queue (maxConcurrent = DEFAULTS.CONCURRENT_PROMISES) {
    * @param  item {Function} Generator function that returns a promise on invoke.
    */
   this.add = (item) => {
-    // const _item = Object.assign({}, item)
-    q.push(item)
-    qmap.set(item, {})
+    const _item = [item].slice(0, 1)[0] || (() => Promise.resolve())
+
+    q.push(_item)
+    qmap.set(_item, {})
   }
 
   this.start = () => {
     // :: marker to the current promise generator
     let currentIndex = 0
 
-    // :: how many promises are active right now
-    // let currentActive = 0
-
     return new Promise((resolve, reject) => {
       let isRejected = false
 
       function getPromise () {
         let generator = q[currentIndex++]
-        // currentActive++
-
-        console.log('Starting new promise.')
 
         return Promise.resolve(generator())
-          // .finally(() => {
-          //   currentActive--
-          // })
           .then(result => {
             qmap.set(generator, result)
             return result

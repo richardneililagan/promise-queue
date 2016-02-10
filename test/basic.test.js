@@ -22,7 +22,6 @@ test('Process flow', (t) => {
     return new Promise(
       resolve => setTimeout(
         () => {
-          console.log(alphabet[count])
           resolve(count++)
         }, 50
       )
@@ -37,8 +36,7 @@ test('Process flow', (t) => {
 
   queue.start()
     .then(results => {
-      console.log(results)
-      t.equal(results.length, 5, 'Promise result should be a collection of all generator results.')
+      t.equal(results.length, 5, 'Promise result should have expected length.')
     })
     .catch(err => {
       console.log(err)
